@@ -108,14 +108,15 @@ export class RollUtility {
         // While the rest can be handled by Item._getUsageUpdates(), this one thing cannot
         if (caller.id && config.consumeQuantity && !config.consumeUsage) {
             if (caller.system.quantity === 0) {
-                ui.notifications.warn(CoreUtility.localize("SW5E.ItemNoUses", {name: caller.name}));
+                ui.notifications.warn(CoreUtility.localize("SW5E.ItemNoUses", { name: caller.name }));
                 return;
             }
 
             config.consumeQuantity = false;
 
             const itemUpdates = {};
-			itemUpdates["system.quantity"] = Math.max(0, caller.system.quantity - 1);
+            itemUpdates["system.quantity"] = Math.max(0, caller.system.quantity - 1);
+
             await caller.update(itemUpdates);
         }
 
@@ -170,7 +171,7 @@ export class RollUtility {
             LogUtility.logError(CoreUtility.localize(`${MODULE_SHORT}.messages.error.labelNotInDictionary`,
                 { type: "Skill", label: skillId, dictionary: "CONFIG.SW5E.skills" }));
             return null;
-		}
+        }
 
         const skill = CONFIG.SW5E.skills[skillId];
         const abilityId = options.ability || (actor.system?.skills[skillId]?.ability ?? skill.ability);
@@ -340,14 +341,14 @@ export class RollUtility {
     static getCritTypeForRoll(roll, options = {}) {
         if (!roll) return null;
 
-		let totalCrit = 0;
-		let totalFumble = 0;
+        let totalCrit = 0;
+        let totalFumble = 0;
 
         for (const die of roll.dice) {
             const { crit, fumble } = _countCritsFumbles(die, options)
             totalCrit += crit;
             totalFumble += fumble;
-		}
+        }
 
         return _getCritResult(totalCrit, totalFumble);
     }
@@ -414,7 +415,7 @@ export class RollUtility {
      */
     static async ensureMultiRoll(roll, params = {}) {
         if (!roll) {
-			LogUtility.logError(CoreUtility.localize(`${MODULE_SHORT}.messages.error.rollIsNullOrUndefined`));
+            LogUtility.logError(CoreUtility.localize(`${MODULE_SHORT}.messages.error.rollIsNullOrUndefined`));
             return null;
         }
 
@@ -617,8 +618,7 @@ async function _getItemRoll(item, params, rollType) {
     return quickroll;
 }
 
-function _getCritResult(crit, fumble)
-{
+function _getCritResult(crit, fumble) {
     if (crit > 0 && fumble > 0) {
         return CRIT_TYPE.MIXED;
     }
@@ -632,8 +632,7 @@ function _getCritResult(crit, fumble)
     }
 }
 
-function _countCritsFumbles(die, options)
-{
+function _countCritsFumbles(die, options) {
     let crit = 0;
     let fumble = 0;
 

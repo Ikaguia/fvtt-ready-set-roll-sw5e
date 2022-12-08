@@ -37,7 +37,6 @@ export const ITEM_TYPE = {
     FEATS: "feats",
     FIGHTINGSTYLES: "fightingstyles",
     FIGHTINGMASTERIES: "fightingmasteries",
-    FORCEPOWERS: "forcepowers",
     GAMINGSETS: "gamingsets",
     IMPLEMENTS: "implements",
     INVOCATIONS: "invocations",
@@ -57,7 +56,7 @@ export const ITEM_TYPE = {
     STARSHIPMODIFICATIONS: "starshipmodifications",
     STARSHIPS: "starships",
     STARSHIPWEAPONS: "starshipweapons",
-    TECHPOWERS: "techpowers",
+    POWER: "power",
     VENTURES: "ventures",
     VIBROWEAPONS: "vibroweapons"
 }
@@ -274,7 +273,6 @@ export class ItemUtility {
         if (!item || !CONFIG[MODULE_SHORT].validItemTypes.includes(item.type)) {
             return;
         }
-
         if (item.flags && item.flags[MODULE_SHORT]) {
             return;
         }
@@ -587,7 +585,7 @@ async function _addFieldDamage(fields, item, params) {
             roll.terms.shift();
 
             if (params?.damageFlags[i] ?? true) {
-                damageTermGroups.push({ type: part[1], terms: partTerms});
+                damageTermGroups.push({ type: part[1], terms: partTerms });
                 damageContextGroups.push(ItemUtility.getDamageContextFromItem(item, i));
             }
         });
