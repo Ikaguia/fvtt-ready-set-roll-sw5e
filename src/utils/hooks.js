@@ -17,12 +17,12 @@ export const HOOKS_CORE = {
     RENDER_CHAT_MSG: "renderChatMessage"
 }
 
-export const HOOKS_DND5E = {
-    USE_ITEM: "dnd5e.useItem",
-    PRE_DISPLAY_CARD: "dnd5e.preDisplayCard",
-    DISPLAY_CARD: "dnd5e.displayCard",
-    PRE_ROLL_SKILL: "dnd5e.preRollSkill",
-    PRE_ROLL_TOOL: "dnd5e.preRollToolCheck",
+export const HOOKS_SW5E = {
+    USE_ITEM: "sw5e.useItem",
+    PRE_DISPLAY_CARD: "sw5e.preDisplayCard",
+    DISPLAY_CARD: "sw5e.displayCard",
+    PRE_ROLL_SKILL: "sw5e.preRollSkill",
+    PRE_ROLL_TOOL: "sw5e.preRollToolCheck",
     RENDER_ITEM_SHEET: "renderItemSheet5e",
     RENDER_ACTOR_SHEET: "renderActorSheet5e"
 }
@@ -46,9 +46,9 @@ export class HooksUtility {
 
             if (!libWrapper.is_fallback && !libWrapper.version_at_least?.(1, 4, 0)) {
                 Hooks.once(HOOKS_CORE.READY, () => {
-                    const version = "v1.4.0.0";                    
+                    const version = "v1.4.0.0";
                     LogUtility.logError(CoreUtility.localize(`${MODULE_SHORT}.messages.error.libWrapperMinVersion`, { version }));
-                });        
+                });
                 return;
             }
 
@@ -56,7 +56,7 @@ export class HooksUtility {
             PatchingUtility.patchActors();
             PatchingUtility.patchItems();
             PatchingUtility.patchItemSheets();
-                        
+
             HooksUtility.registerChatHooks();
             HooksUtility.registerTestHooks();
         });
@@ -75,20 +75,20 @@ export class HooksUtility {
             LogUtility.log(`Loaded ${MODULE_TITLE}`);
 
             CONFIG[MODULE_SHORT].combinedDamageTypes = foundry.utils.mergeObject(
-                foundry.utils.duplicate(CONFIG.DND5E.damageTypes),
-                foundry.utils.duplicate(CONFIG.DND5E.healingTypes),
+                foundry.utils.duplicate(CONFIG.SW5E.damageTypes),
+                foundry.utils.duplicate(CONFIG.SW5E.healingTypes),
                 { recursive: false }
             );
 
             const combinedToolIds = foundry.utils.mergeObject(
-                foundry.utils.duplicate(CONFIG.DND5E.toolIds),
-                foundry.utils.duplicate(CONFIG.DND5E.vehicleTypes),
+                foundry.utils.duplicate(CONFIG.SW5E.toolIds),
+                foundry.utils.duplicate(CONFIG.SW5E.vehicleTypes),
                 { recursive: false }
             );
 
             CONFIG[MODULE_SHORT].combinedToolTypes = foundry.utils.mergeObject(
                 combinedToolIds,
-                foundry.utils.duplicate(CONFIG.DND5E.toolProficiencies),
+                foundry.utils.duplicate(CONFIG.SW5E.toolProficiencies),
                 { recursive: false }
             );
 
@@ -110,7 +110,7 @@ export class HooksUtility {
             ItemUtility.ensureFlagsOnitem(item);
         });
 
-        Hooks.on(HOOKS_DND5E.USE_ITEM, (item, config, options) => {
+        Hooks.on(HOOKS_SW5E.USE_ITEM, (item, config, options) => {
             if (!options?.ignore) {
                 RollUtility.rollItem(item, foundry.utils.mergeObject(config, options, { recursive: false }));
             }
@@ -122,7 +122,7 @@ export class HooksUtility {
      */
     static registerChatHooks() {
         Hooks.on(HOOKS_CORE.RENDER_CHAT_MSG, (message, html, data) => {
-            ChatUtility.bindChatCard(message, html);           
+            ChatUtility.bindChatCard(message, html);
         });
     }
 
@@ -130,12 +130,12 @@ export class HooksUtility {
      * Register sheet specific hooks for module functionality.
      */
     static registerSheetHooks() {
-        Hooks.on(HOOKS_DND5E.RENDER_ITEM_SHEET, (app, html, data) => {
+        Hooks.on(HOOKS_SW5E.RENDER_ITEM_SHEET, (app, html, data) => {
             SheetUtility.setAutoHeightOnSheet(app);
             SheetUtility.addModuleContentToItemSheet(app, html);
         });
 
-        Hooks.on(HOOKS_DND5E.RENDER_ACTOR_SHEET, (app, html, data) => {
+        Hooks.on(HOOKS_SW5e.RENDER_ACTOR_SHEET, (app, html, data) => {
             SheetUtility.addModuleContentToActorSheet(app, html);
         });
     }

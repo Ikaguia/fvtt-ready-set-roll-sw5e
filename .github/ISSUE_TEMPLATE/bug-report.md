@@ -18,7 +18,7 @@ A clear and concise description of what the bug is, along with any other context
 
 **Versions**
  - Module: [x.x.x]
- - dnd5e: [x.x.x]
+ - sw5e: [x.x.x]
  - Foundry: [10.xxx]
 
 **Other Modules**

@@ -35,7 +35,7 @@ export class SheetUtility {
         if (!CONFIG[MODULE_SHORT].validItemTypes.includes(item.type)) {
             return;
         }
-        
+
         ItemUtility.refreshFlagsOnItem(item);
 
         let html = protoHtml;
@@ -47,7 +47,7 @@ export class SheetUtility {
             _addItemOptionsTab(html);
             _addDamageContextFields(item, html);
             await _addItemOptions(item, html);
-        }        
+        }
 
         // Re-activate roll options tab if needed (after certain events it may be necessary).
         if (_activate) {
@@ -110,7 +110,7 @@ async function _addItemOptions(item, html) {
     const settingsContainer = html.find(".sheet-body");
 
     const properties = {
-        dnd5e: CONFIG.DND5E,
+        sw5e: CONFIG.SW5E,
         altRollEnabled: SettingsUtility.getSettingValue(SETTING_NAMES.ALT_ROLL_ENABLED),
         item,
         flags: item.flags,
@@ -249,7 +249,7 @@ function _addDamageContextFields(item, html) {
     if (foundry.utils.getProperty(item, `flags.${MODULE_SHORT}.quickOther`)) {
         const otherRoll = html.find(`.tab.details .form-fields input[name="system.formula"]`);
         const otherContextField = $(`<input type="text" name="flags.${MODULE_SHORT}.quickOther.context" value="${(item.flags[MODULE_SHORT].quickOther.context || "")}" placeholder="${CoreUtility.localize(placeholder)}" data-dtype="String" style="margin-left:5px;">`);
-        
+
         if (otherRoll[0]) {
             otherRoll[0].after(otherContextField[0]);
         }
