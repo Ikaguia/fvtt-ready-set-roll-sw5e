@@ -3,19 +3,13 @@
 ![Foundry Versions](https://img.shields.io/endpoint?url=https%3A%2F%2Ffoundryshields.com%2Fversion%3Fstyle%3Dfor-the-badge%26url%3Dhttps%3A%2F%2Fraw.githubusercontent.com%2Fsw5e-foundry%2Ffvtt-ready-set-roll-sw5e%2Fmaster%2Fmodule.json&color=ff601e&label=Compatible%20Foundry%20Versions)
 ![GitHub all releases](https://img.shields.io/github/downloads/sw5e-foundry/fvtt-ready-set-roll-sw5e/total?style=for-the-badge&label=Module%20Downloads)
 
-**Ready Set Roll SW5E** is a Foundry VTT module that accelerates the built in rolling system of the [Foundry SW5e system](https://github.com/sw5e-foundry/sw5e). It allows for quick rolls with advantage, disadadvantage, and other modifiers for skills, items, ability checks, and saving throws. This module is a conversion of [MangoFVTT](https://github.com/MangoFVTT)'s [Ready Set Roll for 5e](https://github.com/MangoFVTT/fvtt-ready-set-roll-5e) module, which is a complete rewrite and modernisation of [RedReign](https://github.com/RedReign)'s [Better Rolls for 5e](https://github.com/RedReign/FoundryVTT-BetterRolls5e) module, which is no longer supported, and no longer functional as of more recent versions of FoundryVTT. 
+**Ready Set Roll for sw5e** is a Foundry VTT module that accelerates the built in rolling system of the [Foundry sw5e system](https://github.com/sw5e-foundry/sw5e). It allows for quick rolls with advantage, disadadvantage, and other modifiers for skills, items, ability checks, and saving throws. This module is a complete rewrite and modernisation of [RedReign](https://github.com/RedReign)'s [Better Rolls for 5e](https://github.com/RedReign/FoundryVTT-BetterRolls5e) module, which is no longer supported, and no longer functional as of more recent versions of FoundryVTT.
 
-If you are feeling generous, and would like to support Mango's work, you can check out his module for more info.
+Check out [MangoFVTT](https://github.com/MangoFVTT/fvtt-ready-set-roll-5e), the original author of Ready Set Roll for dnd5e!
 
 ## Installation
 
 ### Method 1
-1. Start up Foundry and click "Install Module" in the "Add-on Modules" tab.
-2. Search for "Ready Set Roll" in the pop up window.
-3. Click "Install" and the module should download and appear in your modules list.
-4. Enjoy!
-
-### Method 2
 1. Start up Foundry and click "Install Module" in the "Add-on Modules" tab.
 2. Paste one of the following into the "Manifest URL" field:
     - *Latest Release:* `https://raw.githubusercontent.com/sw5e-foundry/fvtt-ready-set-roll-sw5e/master/module.json`
@@ -31,10 +25,7 @@ Ready Set Roll requires [libWrapper](https://foundryvtt.com/packages/lib-wrapper
 ### Verified Modules
 The following modules have been verified as compatible from the specified module release onward. Note that updates to Foundry VTT or the module in question may cause incompatibilities that need to be re-tested. Furthermore, each verified module is tested with Ready Set Roll in isolation. Combining modules is likely to still work, however may cause issues. Always proceed with caution (keep backups) when installing and using multiple modules.
 - [Dice So Nice](https://gitlab.com/riccisi/foundryvtt-dice-so-nice) <sup>(1.2.0+)</sup>
-<!-- - [Tidy5e Sheet](https://github.com/sdenec/tidy5e-sheet) <sup>(1.2.0+)</sup> -->
 - [Dynamic Active Effects](https://gitlab.com/tposney/dae) <sup>(1.3.1+)</sup>
-- [Build-a-Bonus](https://github.com/krbz999/babonus) <sup>(1.3.2+)</sup>
-- [Combat Utility Belt](https://github.com/death-save/combat-utility-belt) <sup>(1.3.11+)</sup>
 
 ## Implemented Features
 
@@ -107,15 +98,15 @@ The following modules have been verified as compatible from the specified module
 
 ![image](https://user-images.githubusercontent.com/110994627/214161613-1bb4720e-b0b4-4f85-9658-e8c44d1227c3.png)
 
-## Planned Features
-- [See [FEATURE] Issues List](https://github.com/MangoFVTT/fvtt-ready-set-roll-5e/issues?q=is%3Aopen+is%3Aissue+label%3Afeature)
-
 ## Known Issues
-- [See [BUG] Issues list](https://github.com/MangoFVTT/fvtt-ready-set-roll-5e/issues?q=is%3Aopen+is%3Aissue+label%3Abug+)
+Come here for issues (do NOT report issues to MangoFVTT, sw5e is slightly different): https://github.com/sw5e-foundry/fvtt-ready-set-roll-sw5e/issues
+- Chat icon for weapon or spell is off, we're looking into though!
 
 ## Acknowledgements
 - Atropos and the Foundry development team for making a truly fantastic VTT.
 - RedReign for creating the original Better Rolls for 5e module, without which this module would not exist.
+- MangoFVTT for creating the new Ready Set Rolls for 5e module, without it we wouldn't have it for sw5e!
+- RainingDragon for making the original conversion to sw5e.
 - All the wonderful folks on the Foundry VTT discord for their tireless community efforts.
 
 ## License
