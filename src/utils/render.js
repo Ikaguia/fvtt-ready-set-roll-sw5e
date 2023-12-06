@@ -293,8 +293,8 @@ async function _renderDamageRoll(renderData = {}) {
     let pushedTitle = false;
     
     if (CONFIG.SW5E.healingTypes[damageType]) {
-        damagePrefix += CONFIG.SW5e.healingTypes[damageType];
-    } else if (CONFIG.SW5e.damageTypes[damageType] || !damageType || damageType === '') {
+        damagePrefix += CONFIG.SW5E.healingTypes[damageType];
+    } else if (CONFIG.SW5E.damageTypes[damageType] || !damageType || damageType === '') {
         damagePrefix += CoreUtility.localize(`${MODULE_SHORT}.chat.${ROLL_TYPE.DAMAGE}`);
         damagePrefix += versatile ? ` [${CONFIG.SW5E.weaponProperties.ver}]` : "";
     } else if (damageType === ROLL_TYPE.OTHER) {

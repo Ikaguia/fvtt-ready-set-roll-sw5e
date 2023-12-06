@@ -243,7 +243,7 @@ export class RollUtility {
             return null;
 		}
         
-        const ability = CONFIG.SW5e.abilities[abilityId];
+        const ability = CONFIG.SW5E.abilities[abilityId];
 
         const title = `${ability.label} ${CoreUtility.localize(`${MODULE_SHORT}.chat.${ROLL_TYPE.ABILITY_TEST}`)}`;
 

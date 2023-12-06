@@ -135,7 +135,7 @@ export class HooksUtility {
             SheetUtility.addModuleContentToItemSheet(app, html);
         });
 
-        Hooks.on(HOOKS_SW5e.RENDER_ACTOR_SHEET, (app, html, data) => {
+        Hooks.on(HOOKS_SW5E.RENDER_ACTOR_SHEET, (app, html, data) => {
             SheetUtility.addModuleContentToActorSheet(app, html);
         });
     }

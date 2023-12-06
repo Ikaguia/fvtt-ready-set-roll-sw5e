@@ -119,7 +119,7 @@ export class CoreUtility {
         const heavyArmorMaster = target.items.some(i => i.type === ITEM_TYPE.FEATURE && i.name.toLowerCase().includes('heavy armor master'));
 
         if (heavyArmorMaster) {
-            if (item.type === ITEM_TYPE.WEAPON && !item.system?.properties?.mgc && CONFIG.SW5e.physicalDamageTypes[type]) {
+            if (item.type === ITEM_TYPE.WEAPON && !item.system?.properties?.mgc && CONFIG.SW5E.physicalDamageTypes[type]) {
                 result -= 3;
             }
         }
@@ -140,7 +140,7 @@ export class CoreUtility {
         let result = damage;
         let bypass = false;
 
-        if (trait?.bypasses && trait.bypasses.size > 0 && CONFIG.SW5e.physicalDamageTypes[type]) {
+        if (trait?.bypasses && trait.bypasses.size > 0 && CONFIG.SW5E.physicalDamageTypes[type]) {
             trait.bypasses.forEach(b => {
                 bypass ||= item.system.properties[b] ?? false;
             });
@@ -255,7 +255,7 @@ export class CoreUtility {
      * @returns {Object} The indexed item object with the given identifier.
      */
     static getBaseItemIndex(identifier) {
-        let pack = CONFIG.SW5e.sourcePacks.ITEMS;
+        let pack = CONFIG.SW5E.sourcePacks.ITEMS;
         let [scope, collection, id] = identifier.split(".");
         if ( scope && collection ) pack = `${scope}.${collection}`;
         if ( !id ) id = identifier;
