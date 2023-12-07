@@ -6,7 +6,7 @@ export const MODULE_NAME = "ready-set-roll-sw5e";
 /**
  * Full title string of the module.
  */
-export const MODULE_TITLE = "Ready Set Roll for D&D5e";
+export const MODULE_TITLE = "Ready Set Roll for sw5e";
 
 /**
  * Shorthand string identifier for the module

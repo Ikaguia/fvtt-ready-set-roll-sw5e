@@ -1,6 +1,6 @@
 # Ready Set Roll for 5e - FoundryVTT Module
-![Latest Version](https://img.shields.io/badge/dynamic/json.svg?url=https%3A%2F%2Fraw.githubusercontent.com%2Fsw5e-foundry%2Ffvtt-ready-set-roll-sw5e%2Fmaster%2Fmodule.json&label=Latest%20Release&prefix=v&query=$.version&colorB=blue&style=for-the-badge)
-![Foundry Versions](https://img.shields.io/endpoint?url=https%3A%2F%2Ffoundryshields.com%2Fversion%3Fstyle%3Dfor-the-badge%26url%3Dhttps%3A%2F%2Fraw.githubusercontent.com%2Fsw5e-foundry%2Ffvtt-ready-set-roll-sw5e%2Fmaster%2Fmodule.json&color=ff601e&label=Compatible%20Foundry%20Versions)
+![Latest Version](https://img.shields.io/badge/dynamic/json.svg?url=https%3A%2F%2Fraw.githubusercontent.com%2Fsw5e-foundry%2Ffvtt-ready-set-roll-sw5e%2Fworking-sw5e%2Fmodule.json&label=Latest%20Release&prefix=v&query=$.version&colorB=blue&style=for-the-badge)
+![Foundry Versions](https://img.shields.io/endpoint?url=https%3A%2F%2Ffoundryshields.com%2Fversion%3Fstyle%3Dfor-the-badge%26url%3Dhttps%3A%2F%2Fraw.githubusercontent.com%2Fsw5e-foundry%2Ffvtt-ready-set-roll-sw5e%2Fworking-sw5e%2Fmodule.json&color=ff601e&label=Compatible%20Foundry%20Versions)
 ![GitHub all releases](https://img.shields.io/github/downloads/sw5e-foundry/fvtt-ready-set-roll-sw5e/total?style=for-the-badge&label=Module%20Downloads)
 
 ## This is a work-in-progress transition to sw5e for Ready Set Roll; there *might* be a few issues, be aware!
@@ -14,7 +14,7 @@ Check out [MangoFVTT](https://github.com/MangoFVTT/fvtt-ready-set-roll-5e), the 
 ### Method 1
 1. Start up Foundry and click "Install Module" in the "Add-on Modules" tab.
 2. Paste one of the following into the "Manifest URL" field:
-    - *Latest Release:* `https://raw.githubusercontent.com/sw5e-foundry/fvtt-ready-set-roll-sw5e/master/module.json`
+    - *Latest Release:* `https://raw.githubusercontent.com/sw5e-foundry/fvtt-ready-set-roll-sw5e/working-sw5e/module.json`
     - *Previous Releases:* A link to the `module.json` file from any of the [previous releases](https://github.com/sw5e-foundry/fvtt-ready-set-roll-sw5e/releases).
 3. Click "Install" and the module should download and appear in your modules list.
 4. Enjoy!
